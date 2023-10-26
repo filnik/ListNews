@@ -23,8 +23,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val viewModel = hiltViewModel<MainViewModel>()
             ListNewsTheme {
+                val viewModel = hiltViewModel<MainViewModel>()
                 val density = LocalDensity.current
                 val bottomSheetState =
                     remember { BottomSheetState(BottomSheetValue.Collapsed, density = density) }
