@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ListNews</string>
+    <string name="loading">Loading...</string>
+    <string name="local_news">Local News</string>
+</resources>
