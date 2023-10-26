@@ -7,6 +7,7 @@ import androidx.compose.material.BottomSheetState
 import androidx.compose.material.BottomSheetValue
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.rememberBottomSheetScaffoldState
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalDensity
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity() {
 
                 DetailsScreen(
                     bottomSheetScaffoldState = bottomSheetScaffoldState,
-                    viewModel = viewModel
+                    newsState = viewModel.selectedNews.collectAsState()
                 ) {
                     NewsListScreen(viewModel.newsList) { item ->
                         viewModel.openDetails(item)

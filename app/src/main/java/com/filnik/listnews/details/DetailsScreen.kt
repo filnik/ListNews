@@ -14,25 +14,25 @@ import androidx.compose.material.BottomSheetScaffoldState
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.filnik.listnews.NewsItem
 import com.filnik.listnews.R
 import com.filnik.listnews.Typography
-import com.filnik.listnews.main.MainViewModel
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DetailsScreen(
     bottomSheetScaffoldState: BottomSheetScaffoldState,
-    viewModel: MainViewModel,
+    newsState: State<NewsItem?>,
     content: @Composable (PaddingValues) -> Unit
 ) {
-    val newsItem = viewModel.selectedNews.collectAsState().value
+    val newsItem = newsState.value
     BottomSheetScaffold(
         scaffoldState = bottomSheetScaffoldState,
         sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
