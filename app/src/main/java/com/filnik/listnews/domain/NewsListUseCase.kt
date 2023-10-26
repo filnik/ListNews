@@ -2,8 +2,9 @@ package com.filnik.listnews.domain
 
 import com.filnik.listnews.NewsItem
 import com.filnik.listnews.R
+import javax.inject.Inject
 
-class NewsListUseCase {
+class NewsListUseCase @Inject constructor() {
     fun execute() = listOf(
         NewsItem(
             "Il Milan cade a Parigi: il Psg vince 3-0",
